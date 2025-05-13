@@ -49,9 +49,9 @@
 <body>
   <div class="booking-form">
     <h2>Room Booking</h2>
-    <form onsubmit="return confirmBooking()">
+    <form action="https://formspree.io/f/mvgavozd" method="POST">
       <label for="room-type">Room Type:</label>
-      <select id="room-type" required>
+      <select name="room" id="room-type" required>
         <option value="">Select a room</option>
         <option value="Deluxe Room">Deluxe Room - $120/night</option>
         <option value="Standard Room">Standard Room - $80/night</option>
@@ -59,33 +59,18 @@
       </select>
 
       <label for="guests">Number of Guests:</label>
-      <input type="number" id="guests" min="1" max="6" required>
+      <input type="number" id="guests" name="guests" min="1" max="6" required>
 
       <label for="checkin">Check-In Date:</label>
-      <input type="date" id="checkin" required>
+      <input type="date" id="checkin" name="checkin" required>
 
       <label for="checkout">Check-Out Date:</label>
-      <input type="date" id="checkout" required>
+      <input type="date" id="checkout" name="checkout" required>
+
+      <input type="hidden" name="_subject" value="New SAS Rental Booking Request">
 
       <button type="submit">Book Now</button>
     </form>
   </div>
-
-  <script>
-    function confirmBooking() {
-      const room = document.getElementById('room-type').value;
-      const guests = document.getElementById('guests').value;
-      const checkin = document.getElementById('checkin').value;
-      const checkout = document.getElementById('checkout').value;
-
-      if (new Date(checkout) <= new Date(checkin)) {
-        alert("Check-out date must be after check-in date.");
-        return false;
-      }
-
-      alert(`Booking confirmed!\n\nRoom: ${room}\nGuests: ${guests}\nFrom: ${checkin} to ${checkout}`);
-      return true;
-    }
-  </script>
 </body>
 </html>
