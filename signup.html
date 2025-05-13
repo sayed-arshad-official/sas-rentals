@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign Up - SAS Rentals</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="left"><a href="index.html">Home</a></div>
+    <div class="right">
+      <a href="signup.html">Sign Up</a>
+      <a href="login.html">Login</a>
+    </div>
+  </header>
+  <main>
+    <h2>Sign Up</h2>
+    <form method="POST" action="https://your-backend-url/signup">
+      <input type="email" name="email" placeholder="Email" required><br>
+      <input type="text" name="phone" placeholder="Phone (10 digits)" pattern="\d{10}" required><br>
+      <input type="password" name="password" placeholder="Password" required><br>
+      <button type="submit">Sign Up</button>
+    </form>
+  </main>
+  <footer>SAS Rentals © 2025</footer>
+</body>
+</html>
